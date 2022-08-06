@@ -11,8 +11,9 @@ import Footer from './components/Footer';
 import { useFetchByFilter } from './hooks/useFetchByFilter';
 import ListProperties from "./components/ListProperties"
 import useObserver from './hooks/isNearScreen';
-import throttle from 'just-throttle';
+
 import MyFacebookLoader from './components/Loader';
+import debounce from 'just-debounce';
 
 
 export default function Search(){
@@ -37,7 +38,7 @@ export default function Search(){
     const {show } = useObserver({externalRef  : externalRef,
       once:false})
 
-    const debounceHandleNextpage = useCallback( throttle(
+    const debounceHandleNextpage = useCallback( debounce(
       () =>setPage(prevPage => prevPage+ 1)
       , 200
   ), [setPage])
