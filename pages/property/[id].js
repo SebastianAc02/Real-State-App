@@ -14,7 +14,7 @@ import { useRouter } from 'next/router';
 import { useApi } from '../hooks/useFetchApi';
 import FetchSingleProperty from '../utils/FetchSingleProperty';
 import { useSingle } from '../hooks/useSingle';
-import { ConsoleSqlOutlined } from '@ant-design/icons';
+
 
 import { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
